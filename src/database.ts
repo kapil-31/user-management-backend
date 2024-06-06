@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
-const mongoURI ='mongodb://localhost:27017/test'
+import { config } from "./config";
 
 const connectDB = ()=>{
     return new Promise(async (resolve,reject)=>{
         try{
-        await mongoose.connect(mongoURI)
+        await mongoose.connect(config.MONGOURI)
         resolve('mongodb connected successfully');
         }
         catch(e){
