@@ -23,7 +23,7 @@ app.use(errorHandler)
 connectDB().then((message)=>{
     console.log(message)
     app.listen(config.PORT ,()=>{
-        console.log('Server is Running on port'+" "+ (config.PORT))
+        console.log('Server is Running on port '+" "+ (config.PORT))
     })
 }).catch(err=>{
     console.log(err)
