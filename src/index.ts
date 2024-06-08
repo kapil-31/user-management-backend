@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-import express  from "express";
+import express, { Request, Response }  from "express";
 import cors from 'cors'
 import connectDB from "./database";
 import routes from './routes/v1/index'
@@ -16,6 +16,9 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
 app.use('/v1/api',routes)
+app.use('/health-check',function(req:Request,res:Response){
+    res.send('It\'s working')
+})
 
 
 app.use(errorHandler)

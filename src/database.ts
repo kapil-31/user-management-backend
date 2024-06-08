@@ -4,7 +4,7 @@ import { config } from "./config";
 const connectDB = ()=>{
     return new Promise(async (resolve,reject)=>{
         try{
-        await mongoose.connect(config.MONGOURI)
+        await mongoose.connect(config.MONGOURI,{  serverSelectionTimeoutMS: 5000 })
         resolve('mongodb connected successfully');
         }
         catch(e){
