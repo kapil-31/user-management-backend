@@ -19,13 +19,14 @@ export class userController  {
     }
     static async getAll(req:Request,res:Response,next:NextFunction){
         try{
-            const user = await UserService.getAll();
-            res.status(200).json({data:user,'message':"success"})
+            const page = parseInt(req.query.page as string) || 1;
+            const perPage = parseInt(req.query.perPage as string) || 10;
+            const {data,pagination} = await UserService.getAll({page,perPage});
+            res.status(200).json({data:data,pagination,'message':"success"})
         }
         catch(e){
             next(e)
         }
-      
     }
     static async getUserById(req:Request,res:Response,next:NextFunction){
         try{

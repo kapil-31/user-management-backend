@@ -39,9 +39,17 @@ export class UserService {
         
     }
 
-    static async  getAll():Promise<IUser[]>{
-        return  await UserModel.find({});
-         
+    static async  getAll({page,perPage}):Promise<{data:IUser[],pagination:any}>{
+        return  {
+            data:await UserModel.find()
+            .skip((page - 1) * perPage)
+            .limit(perPage),
+            pagination:{
+                page,
+                perPage,
+                total:await UserModel.countDocuments()
+            }
+        }
      }
 }
 

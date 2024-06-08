@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "This app is about Fun",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,8 +9,11 @@
     "build": "tsc",
     "dev": "nodemon --exec ts-node src/index.ts"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "example",
+    "heroku"
+  ],
+  "author": "Kapil Karki",
   "license": "ISC",
   "devDependencies": {
     "@types/mongoose": "^5.11.97",
