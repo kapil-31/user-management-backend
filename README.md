@@ -24,12 +24,18 @@ Follow these steps to set up the backend locally.
 git clone <repository-url>
 cd project-folder
 npm install
-npm run dev
 ```
 
 ### Setup Mongodb locally or  Atlas uri
  - Atlas uri:mongodb+srv://<username>:<password>@<cluster-address>/<dbname>?retryWrites=true&w=majority
  - ***Check:*** .env.example file
+
+### Start
+```bash
+npm run dev 
+```
+- You'll see the  port number in console  where server is started 
+   - http://localhost:port-number/health-check to see if server started correctly
 
 ### API Endpoints
 - **GET:** /v1/api/user: Retrieve all users.
